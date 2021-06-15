@@ -1,0 +1,16 @@
+{
+        "ctxBlueprintIds": [],
+        "description": "INNOVALIA NPN experiment v2-0",
+        "name": "INNOVALIA NPN experiment v2-0",
+        "sites": [
+            "SPAIN_5GROWTH_INNOVALIA"
+        ],
+        "tcBlueprintIds": [
+            "544"
+        ],
+        "deploymentType": "ON_DEMAND",
+        "version": "2.0",
+        "vsBlueprintId": "723",
+        "metrics": [],
+        "kpis": []
+    }

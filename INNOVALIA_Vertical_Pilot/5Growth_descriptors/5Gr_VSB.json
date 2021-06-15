@@ -1,0 +1,69 @@
+{
+        "interSite": true,
+        "version": "3.4",
+        "name": "innovalia_npn_experiment_v3-0",
+        "description": "innovalia_npn_experiment_v3-0",
+        "parameters": [
+            {
+                "parameterId": "5GEVE_VSS.number_of_robots",
+                "parameterName": "Number of traffic sources",
+                "parameterType": "number",
+                "parameterDescription": "description",
+                "applicabilityField": "applicabilityField"
+            }
+        ],
+        "configurableParameters": [
+            "5GEVE_VSS.exp.targetSites",
+            "5GEVE_VSS.exp.stopTime",
+            "5GEVE_VSS.exp.useCase",
+            "5GEVE_VSS.tc.tcBlueprintIds",
+            "5GEVE_VSS.tc.544.params.sleep_time"
+          
+        ],
+        "atomicComponents": [
+            {
+                "type": "SERVICE",
+                "componentId": "5GEVE_VSS",
+                "compatibleSite": "5GEVE",
+                "associatedVsbId": "729",
+                "serversNumber":1,
+                "endPointsIds":[
+                    "ran_sap",
+                    "mgmt_sap"
+                ],
+                "placement":"EDGE"
+            }
+        
+        
+        ]
+,
+        "endPoints": [
+            {
+                "endPointId": "ran_sap",
+                "external": true,
+                "management": false,
+                "ranConnection": true
+            },
+            {
+                "endPointId": "mgmt_sap",
+                "external": true,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "endPointIds": [
+                    "ran_sap"
+                ],
+                "external": true
+            },{
+                "endPointIds": [
+                    "mgmt_sap"
+                ],
+                "external": true
+            }
+
+        ]
+
+    }

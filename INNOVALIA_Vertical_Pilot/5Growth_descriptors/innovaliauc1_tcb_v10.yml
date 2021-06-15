@@ -1,0 +1,7 @@
+testcaseBlueprintId: innovaliauc1_tcb_10
+version: '1.0'
+name: TCB Innovalia UC1 10
+description: Test case to run the Innovalia UC1 10
+executionScript: sleep $$sleepTime;
+userParameters:
+  executionTime: $$sleepTime

@@ -1,0 +1,84 @@
+{
+        "blueprintId": "innovalia_robotics_v2",
+        "version": "2.0",
+        "name": "innovalia_robotics",
+        "description": "innovalia_robotics",
+        "parameters": [
+            {
+                "parameterId": "number_of_robots",
+                "parameterName": "Number of robots",
+                "parameterType": "number",
+                "parameterDescription": "Number of robots",
+                "applicabilityField": "industry"
+            }
+        ],
+        "atomicComponents": [
+            {
+                "componentId": "f639d75b-4fd2-402c-8052-19014014b9c3",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "endPointsIds": [
+                    "RL_controller_extcp",
+                    "RL_n6_extcp"
+                ]
+            },
+            {
+                "componentId": "1c9e3937-6658-44c5-8ba5-1d8fb362ceea",
+                "serversNumber": 1,
+                "endPointsIds": [
+                    "DA_controller_extcp",
+                    "DA_n6_extcp"
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "RL_controller_extcp",
+                "external": false,
+                "management": false,
+                "ranConnection": false
+            },
+            {
+                "endPointId": "RL_n6_extcp",
+                "external": false,
+                "management": false,
+                "ranConnection": false
+            },
+            {
+                "endPointId": "DA_controller_extcp",
+                "external": false,
+                "management": false,
+                "ranConnection": false
+            },
+            {
+                "endPointId": "DA_n6_extcp",
+                "external": false,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "n6_cmm_vl",
+                "management": false,
+                "endPointIds": [
+                    "DA_n6_extcp",
+                    "RL_n6_extcp"
+                ],
+                "external": false
+            },
+            {
+                "name": "controller_cmm_vl",
+                "endPointIds": [
+                    "DA_controller_extcp"
+                ],
+                "management": false,
+                "external": false
+            }
+        ],
+        "applicationMetrics": [],
+        "compatibleContextBlueprint": [],
+        "compatibleSites": [
+            "SPAIN_5GROWTH_INNOVALIA"
+        ]
+    }

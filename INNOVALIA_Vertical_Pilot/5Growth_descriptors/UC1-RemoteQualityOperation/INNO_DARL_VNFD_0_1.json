@@ -1,0 +1,117 @@
+{
+	"vnfdId": "9784c8b1-d5ec-44f9-a98d-662f7bca95cf",
+	"vnfProvider": "Innovalia",
+	"vnfProductName": "DARLVNF",
+	"vnfSoftwareVersion": "0.1",
+	"vnfdVersion": "0.1",
+	"vnfProductInfoName": "DARLVNF",
+	"vnfProductInfoDescription": "DARLVNF",
+	"vnfmInfo": ["INNO_VNFM"],
+	"vdu": [{
+		"vduId": "DARLVNF_vdu",
+		"name": "DARLVNF",
+		"description": "VDU of the DARLVNF",
+		"intCpd": [ {
+			"cpdId": "DARL_n6_intcp",
+			"layerProtocol": "IPV4",
+			"description": "CP for the DARLVNF to connect with UPF",
+			"addressData": [{
+				"addressType": "IP_ADDRESS",
+				"iPAddressAssignment": false,
+				"floatingIpActivated": true,
+				"management": true,
+				"iPAddressType": "IPv4",
+				"numberOfIpAddress": 1
+			}]
+		}],
+		"virtualComputeDesc": "VCD_DARL",
+		"virtualStorageDesc": ["VSD_DARL"],
+		"swImageDesc": {
+			"id": "DARL_SWID",
+			"name": "DARLVNF",
+			"user_image": "ubuntu",
+			"version": "0.1",
+			"checksum": "TBD",
+			"containerFormat": "QCOW",
+			"diskFormat": "QCOW",
+			"minDisk": 1,
+			"minRam": 16,
+			"size": 100,
+			"swImage": "DARLVNF",
+			"operatingSystem": "Ubuntu-18.04"
+		},
+		"configurableProperties": {}
+	}],
+	"virtualComputeDesc": [{
+		"virtualComputeDescId": "VCD_DARL",
+		"virtualMemory": {
+			"virtualMemSize": 16,
+			"virtualMemOversubscriptionPolicy": "asdasd",
+			"numaEnabled": false
+		},
+		"virtualCpu": {
+			"numVirtualCpu": 4,
+			"cpuArchitecture": "x86_64",
+			"virtualCpuClock": 0,
+			"virtualCpuOversubscriptionPolicy": "asdasd"
+		}
+		
+	}],
+	"virtualStorageDesc": [{
+		"id": "VSD_DARL",
+		"typeOfStorage": "VOLUME",
+		"sizeOfStorage": 100,
+		"swImageDesc": "CDN_spr2_SWID"
+	}],
+	"vnfExtCpd": [{
+		"cpdId": "DARL_n6_extcp",
+		"layerProtocol": "IPV4",
+		"description": "CP for the DARLVNF to connect with Robot Link (and UPF)",
+		"addressData": [{
+			"addressType": "IP_ADDRESS",
+			"iPAddressAssignment": false,
+			"floatingIpActivated": true,
+			"management": true,
+			"iPAddressType": "IPv4",
+			"numberOfIpAddress": 1
+		}],
+		"intCpd": "DARL_n6_intcp"
+	}],
+	"deploymentFlavour": [{
+		"flavourId": "DARLVNF_df",
+		"description": "Standard deployment flavour of the DataAssembler VNF",
+		"vduProfile": [{
+			"vduId": "DARLVNF_vdu",
+			"minNumberOfInstances": 1,
+			"maxNumberOfInstances": 1
+		}],
+		"instantiationLevel": [{
+			"levelId": "DARLVNF_il",
+			"description": "Standard instantiation level of the DataAssembler VNF",
+			"vduLevel": [{
+				"vduId": "DARLVNF_vdu",
+				"numberOfInstances": 1
+			}]
+		}],
+		"vnfLcmOperationsConfiguration": {}
+	}],
+	"configurableProperties": {
+			"autoScalable": false,
+			"autoHealable": false,
+			"additionalConfigurableProperty": [ ]
+	},
+	"modifiableAttributes": {},
+	"lifeCycleManagementScript": [{
+		"event": ["START_VNF_INSTANTIATION"],
+		"script": ""
+	}, {
+		"event": ["END_VNF_INSTANTIATION"],
+		"script": ""
+	}, {
+		"event": ["START_VNF_TERMINATION"],
+		"script": ""
+	}, {
+		"event": ["END_VNF_TERMINATION"],
+		"script": ""
+	}]
+}

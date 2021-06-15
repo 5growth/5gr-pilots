@@ -1,0 +1,125 @@
+{
+	"nsd": {
+		"nsdIdentifier": "e4847155-4463-4432-a1aa-dd3dd5071d49",
+		"designer": "Innovalia-CTTC",
+		"version": "0.1",
+		"nsdName": "INNO_DARL_AGV",
+		"nsdInvariantId": "INNO_DARL_AGV_v01",
+		"vnfdId": ["9784c8b1-d5ec-44f9-a98d-662f7bca95cf", "792d0eca-d17c-4d4f-9503-00714f321caf"],
+		"sapd": [{
+				"cpdId": "n6_cmm_sap",
+				"description": "SAP interconnecting the data CP of the DARL and AGV VNFs (with the UPF)",
+				"layerProtocol": "IPV4",
+				"cpRole": "ROOT",
+				"addressData": [{
+					"addressType": "IP_ADDRESS",
+					"iPAddressAssignment": false,
+					"floatingIpActivated": true,
+					"iPAddressType": "IPv4",
+					"numberOfIpAddress": 1
+				}],
+				"sapAddressAssignment": false,
+				"nsVirtualLinkDescId": "n6_cmm_vl"
+			}
+		],
+		"virtualLinkDesc": [{
+			"virtualLinkDescId": "n6_cmm_vl",
+			"virtualLinkDescProvider": "5Tonic",
+			"virtuaLinkDescVersion": "0.1",
+			"connectivityType": {
+				"layerProtocol": "IPV4"
+			},
+			"virtualLinkDf": [{
+				"flavourId": "n6_cmm_vl_vldf",
+				"qos": {
+					"latency": 10,
+					"packetDelayVariation": 0,
+					"packetLossRatio": 0,
+					"priority": 0
+				},
+				"serviceAvaibilityLevel": "LEVEL_1",
+				"bitrateRequirements": {
+					"root": 15,
+					"leaf": 1
+				}
+			}],
+			"description": "Data Network Virtual Link"
+		}],
+		"nsDf": [{
+			"nsDfId": "df_Inno_UC2",
+			"flavourKey": "df_Inno_UC2",
+			"vnfProfile": [{
+					"vnfProfileId": "DARL_profile",
+					"vnfdId": "9784c8b1-d5ec-44f9-a98d-662f7bca95cf",
+					"flavourId": "DARLVNF_df",
+					"instantiationLevel": "DARLVNF_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "vl_profile_n6",
+						"cpdId": [ "DARL_n6_extcp" ]
+					}]
+				},
+	            {
+					"vnfProfileId": "AGV_profile",
+					"vnfdId": "792d0eca-d17c-4d4f-9503-00714f321caf",
+					"flavourId": "AGVVNF_df",
+					"instantiationLevel": "AGVVNF_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "vl_profile_n6",
+						"cpdId": [ "AGV_n6_extcp" ]
+					}]
+				}],
+			"virtualLinkProfile": [{
+				"virtualLinkProfileId": "vl_profile_n6",
+				"virtualLinkDescId": "n6_cmm_vl",
+				"flavourId": "n6_cmm_vl_vldf",
+				"maxBitrateRequirements": {
+					"root": "1",
+					"leaf": "1"
+				},
+				"minBitrateRequirements": {
+					"root": "1",
+					"leaf": "1"
+				}
+			}],
+			"nsInstantiationLevel": [{
+				"nsLevelId": "Inno-UC2_il_default",
+				"description": "Default instantiation level for the Inno-CMM",
+				"vnfToLevelMapping": [{
+						"vnfProfileId": "DARL_profile",
+						"numberOfInstances": 1
+					},
+					{
+						"vnfProfileId": "AGV_profile",
+						"numberOfInstances": 1
+					}],
+				"virtualLinkToLevelMapping": [{
+						"virtualLinkProfileId": "vl_profile_n6",
+						"bitRateRequirements": {
+							"root": "1",
+							"leaf": "1"
+						}
+					}
+				]
+			}],
+			"defaultNsInstantiationLevelId": "Inno-UC2_il_default",
+			"nsProfile": [{
+				"nsProfileId": "ns_profile_Inno-UC2_default",
+				"nsdId": "e4847155-4463-4432-a1aa-dd3dd5071d49",
+				"nsDfId": "df_Inno_UC2",
+				"nsInstantiationLevelId": "Inno-UC2_il_default",
+				"minNumberOfInstances": 1,
+				"maxNumberOfInstances": 1
+			}],
+			"dependencies": []
+		}],
+		"security": {
+			"signature": "INNO-CMM_NSD_SIGNATURE",
+			"algorithm": "INNO-CMM_NSD_ALGORITHM",
+			"certificate": "INNO-CMM_NSD_CERTIFICATE"
+		}
+	}
+}

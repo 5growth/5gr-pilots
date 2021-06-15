@@ -1,0 +1,117 @@
+{
+	"vnfdId": "792d0eca-d17c-4d4f-9503-00714f321caf",
+	"vnfProvider": "Innovalia",
+	"vnfProductName": "AGVVNF",
+	"vnfSoftwareVersion": "0.1",
+	"vnfdVersion": "0.1",
+	"vnfProductInfoName": "AGVVNF",
+	"vnfProductInfoDescription": "AGVVNF",
+	"vnfmInfo": ["INNO_VNFM"],
+	"vdu": [{
+		"vduId": "AGVVNF_vdu",
+		"name": "AGVVNF",
+		"description": "VDU of the AGVVNF",
+		"intCpd": [ {
+			"cpdId": "AGV_n6_intcp",
+			"layerProtocol": "IPV4",
+			"description": "CP for the AGVVNF to connect with UPF",
+			"addressData": [{
+				"addressType": "IP_ADDRESS",
+				"iPAddressAssignment": false,
+				"floatingIpActivated": true,
+				"management": true,
+				"iPAddressType": "IPv4",
+				"numberOfIpAddress": 1
+			}]
+		}],
+		"virtualComputeDesc": "VCD_AGV",
+		"virtualStorageDesc": ["VSD_AGV"],
+		"swImageDesc": {
+			"id": "AGV_SWID",
+			"name": "AGVVNF",
+			"user_image": "ubuntu",
+			"version": "0.1",
+			"checksum": "TBD",
+			"containerFormat": "QCOW",
+			"diskFormat": "QCOW",
+			"minDisk": 1,
+			"minRam": 8,
+			"size": 45,
+			"swImage": "AGVVNF",
+			"operatingSystem": "Ubuntu-18.04"
+		},
+		"configurableProperties": {}
+	}],
+	"virtualComputeDesc": [{
+		"virtualComputeDescId": "VCD_AGV",
+		"virtualMemory": {
+			"virtualMemSize": 8,
+			"virtualMemOversubscriptionPolicy": "asdasd",
+			"numaEnabled": false
+		},
+		"virtualCpu": {
+			"numVirtualCpu": 4,
+			"cpuArchitecture": "x86_64",
+			"virtualCpuClock": 0,
+			"virtualCpuOversubscriptionPolicy": "asdasd"
+		}
+		
+	}],
+	"virtualStorageDesc": [{
+		"id": "AGV_DARL",
+		"typeOfStorage": "VOLUME",
+		"sizeOfStorage": 45,
+		"swImageDesc": "CDN_AGV_SWID"
+	}],
+	"vnfExtCpd": [{
+		"cpdId": "AGV_n6_extcp",
+		"layerProtocol": "IPV4",
+		"description": "CP for the AGVVNF to connect to UPF",
+		"addressData": [{
+			"addressType": "IP_ADDRESS",
+			"iPAddressAssignment": false,
+			"floatingIpActivated": true,
+			"management": true,
+			"iPAddressType": "IPv4",
+			"numberOfIpAddress": 1
+		}],
+		"intCpd": "AGV_n6_intcp"
+	}],
+	"deploymentFlavour": [{
+		"flavourId": "AGVVNF_df",
+		"description": "Standard deployment flavour of the AGV VNF",
+		"vduProfile": [{
+			"vduId": "AGVVNF_vdu",
+			"minNumberOfInstances": 1,
+			"maxNumberOfInstances": 1
+		}],
+		"instantiationLevel": [{
+			"levelId": "AGVVNF_il",
+			"description": "Standard instantiation level of the AGV VNF",
+			"vduLevel": [{
+				"vduId": "AGVVNF_vdu",
+				"numberOfInstances": 1
+			}]
+		}],
+		"vnfLcmOperationsConfiguration": {}
+	}],
+	"configurableProperties": {
+			"autoScalable": false,
+			"autoHealable": false,
+			"additionalConfigurableProperty": [ ]
+	},
+	"modifiableAttributes": {},
+	"lifeCycleManagementScript": [{
+		"event": ["START_VNF_INSTANTIATION"],
+		"script": ""
+	}, {
+		"event": ["END_VNF_INSTANTIATION"],
+		"script": ""
+	}, {
+		"event": ["START_VNF_TERMINATION"],
+		"script": ""
+	}, {
+		"event": ["END_VNF_TERMINATION"],
+		"script": ""
+	}]
+}

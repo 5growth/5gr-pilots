@@ -1,0 +1,62 @@
+{
+        "blueprintId": "INNOVALIA_DSS_VSB",
+        "version": "1.0",
+        "name": "INNOVALIA_DSS_VSB",
+        "description": "innovalia_5growth_dss",
+        "parameters": [
+            {
+                "parameterId": "number_of_robots",
+                "parameterName": "Number of robots",
+                "parameterType": "number",
+                "parameterDescription": "Number of robots",
+                "applicabilityField": "industry"
+            }
+        ],
+        "atomicComponents": [
+            {
+                "componentId": "9784c8b1-d5ec-44f9-a98d-662f7bca95cf",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "endPointsIds": [
+                    "DARL_n6_extcp"
+                ]
+            },
+            {
+                "componentId": "792d0eca-d17c-4d4f-9503-00714f321caf",
+                "serversNumber": 1,
+                "endPointsIds": [
+                    "AGV_n6_extcp"
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "AGV_n6_extcp",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            },
+            {
+                "endPointId": "DARL_n6_extcp",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "n6_cmm_vl",
+                "management": false,
+                "endPointIds": [
+                    "DARL_n6_extcp",
+                    "AGV_n6_extcp"
+                ],
+                "external": false
+            }
+        ],
+        "applicationMetrics": [],
+        "compatibleContextBlueprint": [],
+        "compatibleSites": [
+            "SPAIN_5GROWTH_INNOVALIA"
+        ]
+    }

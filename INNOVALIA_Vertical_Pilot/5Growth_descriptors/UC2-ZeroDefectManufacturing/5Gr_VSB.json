@@ -1,0 +1,60 @@
+{
+	"vsBlueprint": {
+        "interSite": true,
+        "version": "1.0",
+        "name": "innovalia_dss_end_to_end",
+        "description": "INNOVALIA UC2 (DSS) BLUEPRINT",
+        "parameters": [
+            {
+                "parameterId": "5GEVE_INNOVALIA_DSS.number_of_robots",
+                "parameterName": "Number of traffic sources",
+                "parameterType": "number",
+                "parameterDescription": "description",
+                "applicabilityField": "applicabilityField"
+            }
+        ],
+        "configurableParameters": [
+            "5GEVE_INNOVALIA_DSS.exp.targetSites",
+            "5GEVE_INNOVALIA_DSS.exp.stopTime",
+            "5GEVE_INNOVALIA_DSS.exp.useCase",
+            "5GEVE_INNOVALIA_DSS.tc.tcBlueprintIds",
+            "5GEVE_INNOVALIA_DSS.tc.117.params.sleep_time"
+          
+        ],
+        "atomicComponents": [
+            {
+                "type": "SERVICE",
+                "componentId": "5GEVE_INNOVALIA_DSS",
+                "compatibleSite": "5GEVE",
+                "associatedVsbId": "931",
+                "serversNumber":1,
+                "endPointsIds":[
+                    "DA_controller_extcp"
+       
+                ],
+                "placement":"EDGE"
+            }
+        
+        
+        ]
+,
+        "endPoints": [
+            {
+                "endPointId": "DA_controller_extcp",
+                "external": true,
+                "management": false,
+                "ranConnection": true
+            }
+        ],
+        "connectivityServices": [
+            {
+                "endPointIds": [
+                    "DA_controller_extcp"
+                ],
+                "external": true
+            }
+
+        ]
+
+    }
+}

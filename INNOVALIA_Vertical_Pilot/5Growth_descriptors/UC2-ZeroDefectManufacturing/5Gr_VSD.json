@@ -1,0 +1,12 @@
+ {
+        "name": "INNOVALIA_DSS_UC2_VSD",
+        "version": "1.0",
+        "vsBlueprintId": "35",
+        "managementType": "PROVIDER_MANAGED",
+        "qosParameters": {
+            "5GEVE_INNOVALIA_DSS.number_of_robots":"100"
+            
+        },
+        "serviceConstraints": [],
+        "sla": {}
+    }

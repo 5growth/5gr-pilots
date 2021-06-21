@@ -1,0 +1,12 @@
+ {
+        "name": "innovalia_robotics_vsd_v2-0",
+        "version": "2.1",
+        "vsBlueprintId": "12",
+        "managementType": "PROVIDER_MANAGED",
+        "qosParameters": {
+            "5GEVE_VSS.number_of_robots":"100"
+            
+        },
+        "serviceConstraints": [],
+        "sla": {}
+    }

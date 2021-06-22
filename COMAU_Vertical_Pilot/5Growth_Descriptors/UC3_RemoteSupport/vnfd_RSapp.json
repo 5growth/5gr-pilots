@@ -1,0 +1,124 @@
+{
+  "vnfdId": "vRSApp",
+  "vnfProvider": "TEI",
+  "vnfProductName": "Remote Support VNF",
+  "vnfSoftwareVersion": "0.1",
+  "vnfdVersion": "0.1",
+  "vnfProductInfoName": "Remote Support APP",
+  "vnfProductInfoDescription": "Remote Support Application for COMAU Pilot",
+  "vnfmInfo": ["SDK"],
+  "vdu": [
+    {
+      "vduId": "rs_vdu",
+      "name": "rs_vdu",
+      "description": "VDU of the Remote Support Application",
+      "intCpd": [
+        {
+          "cpdId": "rs_data_int",
+          "layerProtocol": "IPV4",
+          "description": "Internal CP towards Remote Service applivation VL",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }
+      ],
+      "virtualComputeDesc": "rs_vcd",
+      "virtualStorageDesc": ["rs_vsd"],
+      "swImageDesc": {
+        "id": "rs_swid",
+        "name": "linux",
+        "version": "0.1",
+        "checksum": "TBD",
+        "containerFormat": "QCOW",
+        "diskFormat": "QCOW",
+        "minDisk": 1,
+        "minRam": 1,
+        "size": 10,
+        "swImage": "linux",
+        "operatingSystem": "ubuntu-server"
+      },
+      "configurableProperties": {}
+  }],
+  "virtualComputeDesc": [{
+    "virtualComputeDescId": "rs_vcd",
+    "virtualMemory": {
+      "virtualMemSize": 1,
+      "virtualMemOversubscriptionPolicy": "nn",
+      "numaEnabled": false
+    },
+    "virtualCpu": {
+      "numVirtualCpu": 2,
+      "cpuArchitecture": "x86_64",
+      "virtualCpuClock": 1024,
+      "virtualCpuOversubscriptionPolicy": "nn"
+    }
+
+  }],
+  "virtualStorageDesc": [{
+    "id": "rs_vsd",
+    "typeOfStorage": "VOLUME",
+    "sizeOfStorage": 10,
+    "swImageDesc": "linux"
+  }],
+  "vnfExtCpd": [{
+    "cpdId": "rs_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "External CP to Remote Support application vl",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": false,
+      "floatingIpActivated": true,
+      "iPAddressType": "IPv4",
+      "numberOfIpAddress": 1,
+      "management": true
+    }],
+    "intCpd": "rs_data_int"
+   }
+  ],
+  "deploymentFlavour": [{
+    "flavourId": "rs_df",
+    "description": "Standard deployment flavour of the Remote Support VNF",
+    "vduProfile": [{
+      "vduId": "rs_vdu",
+      "minNumberOfInstances": 1,
+      "maxNumberOfInstances": 1
+    }],
+    "instantiationLevel": [{
+      "levelId": "rs_il",
+      "description": "Standard instantiation level of the Remote Support VNF",
+      "vduLevel": [{
+        "vduId": "rs_vdu",
+        "numberOfInstances": 1
+      }]
+    }],
+    "vnfLcmOperationsConfiguration": {}
+  }],
+  "configurableProperties": {
+    "autoScalable": false,
+    "autoHealable": false,
+    "additionalConfigurableProperty": [
+
+    ]
+  },
+  "modifiableAttributes": {},
+  "lifeCycleManagementScript": [{
+    "event": ["START_VNF_INSTANTIATION"],
+    "script": ""
+
+  }, {
+    "event": ["END_VNF_INSTANTIATION"],
+    "script": ""
+  }, {
+    "event": ["START_VNF_TERMINATION"],
+    "script": ""
+  }, {
+    "event": ["END_VNF_TERMINATION"],
+    "script": ""
+  }]
+}

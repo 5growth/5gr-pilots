@@ -1,0 +1,177 @@
+{
+  "vnfdId": "vEPC",
+  "vnfProvider": "TEI",
+  "vnfProductName": "vEPC",
+  "vnfSoftwareVersion": "0.1",
+  "vnfdVersion": "0.1",
+  "vnfProductInfoName": "vEPC",
+  "vnfProductInfoDescription": "Virtual EPC for COMAU Pilot",
+  "vnfmInfo": ["SDK"],
+  "vdu": [
+    {
+      "vduId": "epc_vdu",
+      "name": "epc_vdu",
+      "description": "VDU of the evolved packet core",
+      "intCpd": [
+        {
+          "cpdId": "vepc_subscriber_data_int",
+          "layerProtocol": "IPV4",
+          "description": "EPC Internal CP to  subscriber vl data",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }, {
+          "cpdId": "vepc_core_data_int",
+          "layerProtocol": "IPV4",
+          "description": "EPC Internal CP to core vl data",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }, {
+          "cpdId": "vepc_app_data_int",
+          "layerProtocol": "IPV4",
+          "description": "EPC Internal CP to  slice vertical applications vl data",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }
+      ],
+      "virtualComputeDesc": "epc_vcd",
+      "virtualStorageDesc": ["epc_vsd"],
+      "swImageDesc": {
+        "id": "epc_swid",
+        "name": "cirros",
+        "version": "0.1",
+        "checksum": "TBD",
+        "containerFormat": "QCOW",
+        "diskFormat": "QCOW",
+        "minDisk": 1,
+        "minRam": 1,
+        "size": 10,
+        "swImage": "cirros",
+        "userImage": "usercirros",
+        "operatingSystem": "ubuntu-server"
+      },
+      "configurableProperties": {}
+  }],
+  "virtualComputeDesc": [{
+    "virtualComputeDescId": "epc_vcd",
+    "virtualMemory": {
+      "virtualMemSize": 1,
+      "virtualMemOversubscriptionPolicy": "nn",
+      "numaEnabled": false
+    },
+    "virtualCpu": {
+      "numVirtualCpu": 1,
+      "cpuArchitecture": "x86_64",
+      "virtualCpuClock": 0,
+      "virtualCpuOversubscriptionPolicy": "nn"
+    }
+
+  }],
+  "virtualStorageDesc": [{
+    "id": "epc_vsd",
+    "typeOfStorage": "VOLUME",
+    "sizeOfStorage": 10,
+    "swImageDesc": "cirros"
+  }],
+  "vnfExtCpd": [{
+    "cpdId": "epc_core_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "EPC External CP to core vl data",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": false,
+      "floatingIpActivated": true,
+      "iPAddressType": "IPv4",
+      "numberOfIpAddress": 1,
+      "management": true
+    }],
+    "intCpd": "vepc_dt_core_data_int"
+   }, {
+    "cpdId": "epc_subscriber_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "EPC External CP to subscriber vl data",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": false,
+      "floatingIpActivated": true,
+      "iPAddressType": "IPv4",
+      "numberOfIpAddress": 1,
+      "management": true
+    }],
+    "intCpd": "vepc_dt_subscriber_data_int"
+   }, {
+    "cpdId": "epc_app_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "EPC External CP to slice vertical applications vl data",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": false,
+      "floatingIpActivated": true,
+      "iPAddressType": "IPv4",
+      "numberOfIpAddress": 1,
+      "management": true
+    }],
+    "intCpd": "vepc_rs_app_data_int"
+   }   
+  ],
+  "deploymentFlavour": [{
+    "flavourId": "epc_df",
+    "description": "Standard deployment flavour of the EPC VNF",
+    "vduProfile": [{
+      "vduId": "epc_vdu",
+      "minNumberOfInstances": 1,
+      "maxNumberOfInstances": 1
+    }],
+    "instantiationLevel": [{
+      "levelId": "epc_il",
+      "description": "Standard instantiation level of the EPC VNF",
+      "vduLevel": [{
+        "vduId": "epc_vdu",
+        "numberOfInstances": 1
+      }]
+    }],
+    "vnfLcmOperationsConfiguration": {}
+  }],
+  "configurableProperties": {
+    "autoScalable": false,
+    "autoHealable": false,
+    "additionalConfigurableProperty": [
+
+    ]
+  },
+  "modifiableAttributes": {},
+  "lifeCycleManagementScript": [{
+    "event": ["START_VNF_INSTANTIATION"],
+    "script": ""
+
+  }, {
+    "event": ["END_VNF_INSTANTIATION"],
+    "script": ""
+  }, {
+    "event": ["START_VNF_TERMINATION"],
+    "script": ""
+  }, {
+    "event": ["END_VNF_TERMINATION"],
+    "script": ""
+  }]
+}

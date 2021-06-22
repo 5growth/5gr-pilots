@@ -1,0 +1,81 @@
+{
+        "blueprintId": "5GROWTH_COMAU_DT_RS_VSB",
+        "version": "1.0",
+        "name": "COMAU_DT_RS_VSB",
+		"interSite": true,
+        "description": "COMAU Digital Twin and remote support service",
+        "parameters": [
+            {
+                "parameterId": "digital_twin_service.number_of_robots",
+                "parameterName": "Number of robots",
+                "parameterType": "number",
+                "parameterDescription": "Number of robots",
+                "applicabilityField": "industry"
+            }
+        ],
+        "atomicComponents": [
+            {
+                "componentId": "digital_twin_service",
+                "serversNumber": 1,
+                "type": "SERVICE",
+                "endPointsIds": [
+                    "dt_server_data",
+					"dt_server_mgmt"
+           
+                ],
+				"associatedVsbId": "5GEVE_DT_VSBID"
+            },
+			{
+                "componentId": "remote_support_service",
+                "serversNumber": 1,
+                "type": "SERVICE",
+                "endPointsIds": [
+                    "rs_server_data",
+					"rs_server_mgmt"
+           
+                ],
+				"associatedVsbId": "5GEVE_RS_VSBID"
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "app_server_data",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            },
+			{
+                "endPointId": "app_server_mgmt",
+                "external": false,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "mgmt",
+                "management": true,
+                "endPointIds": [
+                    "dt_server_mgmt",
+					"rs_server_mgmt",
+					
+                    
+                ],
+                "external": false
+            },
+            {
+                "name": "data",
+                "endPointIds": [
+                    "dt_server_data",
+					"rs_server_data"
+                ],
+                "management": false,
+                "external": true
+            }
+        ],
+        "applicationMetrics": [],
+        "compatibleContextBlueprint": [],
+        "compatibleSites": [
+            "TURIN_5GROWTH_COMAU", "ITALY_TURIN"
+        ]
+    }

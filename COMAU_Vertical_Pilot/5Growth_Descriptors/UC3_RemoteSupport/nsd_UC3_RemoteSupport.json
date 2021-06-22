@@ -1,0 +1,400 @@
+{
+		"nsdIdentifier": "nsRS",
+		"designer": "TEI",
+		"version": "0.1",
+		"nsdName": "Remote Support Service ",
+		"nsdInvariantId": "Remote Support Application",
+		"vnfdId": ["pRU", "pBBU", "vEPC", "pHSS", "vRSApp"],
+		"sapd": [
+			{
+				"cpdId": "rs_ran_sap_data",
+				"description": "SAP ran data for Remote Support Slice",
+				"layerProtocol": "IPV4",
+				"cpRole": "ROOT",
+				"addressData": [{
+					"addressType": "IP_ADDRESS",
+					"iPAddressAssignment": false,
+					"floatingIpActivated": true,
+					"iPAddressType": "IPv4",
+					"numberOfIpAddress": 1
+				}],
+				"sapAddressAssignment": false,
+				"nsVirtualLinkDescId": "rs_ran_vl_data"
+			}, {
+				"cpdId": "rs_core_sap_data",
+				"description": "SAP radio core  data for Remote Support Slice",
+				"layerProtocol": "IPV4",
+				"cpRole": "ROOT",
+				"addressData": [{
+					"addressType": "IP_ADDRESS",
+					"iPAddressAssignment": false,
+					"floatingIpActivated": true,
+					"iPAddressType": "IPv4",
+					"numberOfIpAddress": 1
+				}],
+				"sapAddressAssignment": false,
+				"nsVirtualLinkDescId": "rs_core_vl_data"
+			}, {
+				"cpdId": "rs_subscriber_sap_data",
+				"description": "SAP subscriber data for Remote Support Slice",
+				"layerProtocol": "IPV4",
+				"cpRole": "ROOT",
+				"addressData": [{
+					"addressType": "IP_ADDRESS",
+					"iPAddressAssignment": false,
+					"floatingIpActivated": true,
+					"iPAddressType": "IPv4",
+					"numberOfIpAddress": 1
+				}],
+				"sapAddressAssignment": false,
+				"nsVirtualLinkDescId": "rs_subscriber_vl_data"
+			}, {
+				"cpdId": "rs_app_sap_data",
+				"description": "SAP data for Remote Support application",
+				"layerProtocol": "IPV4",
+				"cpRole": "ROOT",
+				"addressData": [{
+					"addressType": "IP_ADDRESS",
+					"iPAddressAssignment": false,
+					"floatingIpActivated": true,
+					"iPAddressType": "IPv4",
+					"numberOfIpAddress": 1
+				}],
+				"sapAddressAssignment": false,
+				"nsVirtualLinkDescId": "rs_app_vl_data"
+			}
+		],
+		"virtualLinkDesc": [
+			{
+				"virtualLinkDescId": "rs_ran_vl_data",
+				"virtualLinkDescProvider": "TEI",
+				"virtuaLinkDescVersion": "0.1",
+				"connectivityType": {
+					"layerProtocol": "IPV4"
+				},
+				"virtualLinkDf": [{
+					"flavourId": "rs_ran_vl_df_data",
+					"qos": {
+						"latency": 0,
+						"packetDelayVariation": 0,
+						"packetLossRatio": 0,
+						"priority": 0
+					},
+					"serviceAvaibilityLevel": "LEVEL_1",
+					"bitrateRequirements": {
+						"root": 2,
+						"leaf": 2
+					}
+				}],
+				"description": "Network to connect to the Radio access Network for Remote Support slice"
+			}, {
+				"virtualLinkDescId": "rs_core_vl_data",
+				"virtualLinkDescProvider": "TEI",
+				"virtuaLinkDescVersion": "0.1",
+				"connectivityType": {
+					"layerProtocol": "IPV4"
+				},
+				"virtualLinkDf": [{
+					"flavourId": "rs_core_vl_df_data",
+					"qos": {
+						"latency": 0,
+						"packetDelayVariation": 0,
+						"packetLossRatio": 0,
+						"priority": 0
+					},
+					"serviceAvaibilityLevel": "LEVEL_1",
+					"bitrateRequirements": {
+						"root": 2,
+						"leaf": 2
+					}
+				}],
+				"description": "Network to connect to the Radio RAN and core devices for Remote Support slice"
+			}, {
+				"virtualLinkDescId": "rs_subscriber_vl_data",
+				"virtualLinkDescProvider": "TEI",
+				"virtuaLinkDescVersion": "0.1",
+				"connectivityType": {
+					"layerProtocol": "IPV4"
+				},
+				"virtualLinkDf": [{
+					"flavourId": "rs_subscriber_vl_df_data",
+					"qos": {
+						"latency": 0,
+						"packetDelayVariation": 0,
+						"packetLossRatio": 0,
+						"priority": 0
+					},
+					"serviceAvaibilityLevel": "LEVEL_1",
+					"bitrateRequirements": {
+						"root": 2,
+						"leaf": 2
+					}
+				}],
+				"description": "Network to connect to the vEPC with home subscriber server (HSS) for Remote Support slice"
+			}, {
+				"virtualLinkDescId": "rs_app_vl_data",
+				"virtualLinkDescProvider": "TEI",
+				"virtuaLinkDescVersion": "0.1",
+				"connectivityType": {
+					"layerProtocol": "IPV4"
+				},
+				"virtualLinkDf": [{
+					"flavourId": "rs_app_vl_df_data",
+					"qos": {
+						"latency": 0,
+						"packetDelayVariation": 0,
+						"packetLossRatio": 0,
+						"priority": 0
+					},
+					"serviceAvaibilityLevel": "LEVEL_1",
+					"bitrateRequirements": {
+						"root": 2,
+						"leaf": 2
+					}
+				}],
+				"description": "Network to connect Remote Support application"
+			}
+		],
+		"nsDf": [{
+			"nsDfId": "nsrs_df",
+			"flavourKey": "nsrs_fk",
+			"vnfProfile": [
+
+				{
+					"vnfProfileId": "pRU_profile",
+					"vnfdId": "pRU",
+					"flavourId": "ru_df",
+					"instantiationLevel": "ru_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "rs_ran_vl_profile_data",
+						"cpdId": [
+							"ru_ran_data_ext"
+						]
+					 }
+					]
+				}, {
+					"vnfProfileId": "pBBU_profile",
+					"vnfdId": "pBBU",
+					"flavourId": "bbu_df",
+					"instantiationLevel": "bbu_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "rs_ran_vl_profile_data",
+						"cpdId": [
+							"bbu_ran_data_ext"
+						]
+					 }, {
+						"virtualLinkProfileId": "rs_core_vl_profile_data",
+						"cpdId": [
+							"bbu_core_data_ext"
+						]
+					 }
+					]
+					]
+				}, {
+					"vnfProfileId": "vEPC_profile",
+					"vnfdId": "vEPC",
+					"flavourId": "epc_df",
+					"instantiationLevel": "epc_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "rs_core_vl_profile_data",
+						"cpdId": [
+							"epc_core_data_ext"
+						]
+					 }, {
+						"virtualLinkProfileId": "rs_subscriber_vl_profile_data",
+						"cpdId": [
+							"epc_subscriber_data_ext"
+						]
+					 }, {
+						"virtualLinkProfileId": "rs_app_vl_profile_data",
+						"cpdId": [
+							"epc_app_data_ext"
+						]
+					 }
+					]
+				}, {
+					"vnfProfileId": "pHSS_profile",
+					"vnfdId": "pHSS",
+					"flavourId": "hss_df",
+					"instantiationLevel": hss_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "rs_subscriber_vl_profile_data",
+						"cpdId": [
+							"hss_subscriber_data_ext"
+						]
+					 }
+					]
+					]
+				}, {
+					"vnfProfileId": "vRSApp_profile",
+					"vnfdId": "vRSApp",
+					"flavourId": "rs_df",
+					"instantiationLevel": "rs_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1,
+					"nsVirtualLinkConnectivity": [{
+						"virtualLinkProfileId": "rs_app_vl_profile_data",
+						"cpdId": [
+							"rs_data_ext"
+						]
+					 }
+					]
+				}
+			],
+			"pnfProfile": [{
+				"pnfProfileId": "pRU_profile",
+				"pnfdId": "pRU",
+				"pnfVirtualLinkConnectivity": [{
+					"virtualLinkProfileId": "rs_ran_vl_profile_data",
+					"cpdId": [
+						"pru_ran_data_ext"
+					]
+				}]}, 
+				{
+				"pnfProfileId": "pBBU_profile",
+				"pnfdId": "pBBU",
+				"pnfVirtualLinkConnectivity": [{
+					"virtualLinkProfileId": "rs_ran_vl_profile_data",
+					"cpdId": [
+						"pbbu_ran_data_ext"
+					]
+				}, {
+					"virtualLinkProfileId": "rs_core_vl_profile_data",
+					"cpdId": [
+						"pbbu_core_data_ext"
+					]
+				}
+				]},
+				{
+				"pnfProfileId": "pHSS_profile",
+				"pnfdId": "pHSS",
+				"pnfVirtualLinkConnectivity": [{
+					"virtualLinkProfileId": "rs_subscriber_vl_profile_data",
+					"cpdId": [
+						"phss_subscriber_data_ext"
+					]
+				}
+				]}
+			],
+			"virtualLinkProfile": [
+				{
+					"virtualLinkProfileId": "rs_ran_vl_profile_data",
+					"virtualLinkDescId": "rs_ran_vl_data",
+					"flavourId": "rs_ran_vl_df_data",
+					"maxBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					},
+					"minBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					}
+				}, {
+					"virtualLinkProfileId": "rs_core_vl_profile_data",
+					"virtualLinkDescId": "rs_core_vl_data",
+					"flavourId": "rs_core_vl_df_data",
+					"maxBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					},
+					"minBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					}
+				}, {
+					"virtualLinkProfileId": "rs_subscriber_vl_profile_data",
+					"virtualLinkDescId": "rs_subscriber_vl_data",
+					"flavourId": "rs_subscriber_vl_df_data",
+					"maxBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					},
+					"minBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					}
+				}, {
+					"virtualLinkProfileId": "rs_app_vl_profile_data",
+					"virtualLinkDescId": "rs_app_vl_data",
+					"flavourId": "rs_app_vl_df_data",
+					"maxBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					},
+					"minBitrateRequirements": {
+						"root": "1",
+						"leaf": "1"
+					}
+				}
+				
+			],
+			"nsInstantiationLevel": [
+				{
+					"nsLevelId": "nsrs_il",
+					"description": "Default instantiation level for the Remote Support Service",
+					"vnfToLevelMapping": [
+						{
+							"vnfProfileId": "vEPC_profile",
+							"numberOfInstances": 1
+						}, {
+							"vnfProfileId": "vRSApp_profile",
+							"numberOfInstances": 1
+						}
+						
+					],
+					"virtualLinkToLevelMapping": [
+						{
+							"virtualLinkProfileId": "rs_ran_vl_profile_data",
+							"bitRateRequirements": {
+								"root": "1",
+								"leaf": "1"
+							}
+						},{
+							"virtualLinkProfileId": "rs_core_vl_profile_data",
+							"bitRateRequirements": {
+								"root": "1",
+								"leaf": "1"
+							}
+						}, {
+							"virtualLinkProfileId": "rs_subscriber_vl_profile_data",
+							"bitRateRequirements": {
+								"root": "1",
+								"leaf": "1"
+							}
+						}, {
+							"virtualLinkProfileId": "rs_app_vl_profile_data",
+							"bitRateRequirements": {
+								"root": "1",
+								"leaf": "1"
+							}
+						}
+					]
+				}
+			],
+			"defaultNsInstantiationLevelId": "nsRS_il",
+			"nsProfile": [
+				{
+					"nsProfileId": "nsRS_profile",
+					"nsdId": "nsRS",
+					"nsDfId": "nsRS_df",
+					"nsInstantiationLevelId": "nsRS_il",
+					"minNumberOfInstances": 1,
+					"maxNumberOfInstances": 1
+				}
+			],
+			"dependencies": []
+		}],
+		"security": {
+			"signature": "RS_NSD_SIGNATURE",
+			"algorithm": "RS_NSD_ALGORITHM",
+			"certificate": "RS_NSD_CERTIFICATE"
+		}
+}

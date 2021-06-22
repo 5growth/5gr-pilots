@@ -1,0 +1,17 @@
+{
+        "ctxBlueprintIds": [],
+        "description": "5GROWTH_COMAU_DT_RS_EXPB",
+        "name": "5GROWTH_COMAU_DT_RS_EXPB",
+        "sites": [
+            "TURIN_5GROWTH_COMAU",
+			"ITALY_TURIN
+        ],
+        "tcBlueprintIds": [
+            "TCB_SLEEP_ID"
+        ],
+        "deploymentType": "ON_DEMAND",
+        "version": "1.0",
+        "vsBlueprintId": "5GROWTH_COMAU_DT_RS_VSBID",
+        "metrics": [],
+        "kpis": []
+    }

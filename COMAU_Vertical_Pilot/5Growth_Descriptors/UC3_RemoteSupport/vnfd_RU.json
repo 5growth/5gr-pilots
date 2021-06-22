@@ -1,0 +1,126 @@
+{
+  "vnfdId": "pRU",
+  "vnfProductName": "pRU",
+  "vnfSoftwareVersion": "0.1",
+  "vnfdVersion": "0.1",
+  "vnfProductInfoName": "pRU",
+  "vnfProductInfoDescription": "RU for COMAU Pilot",
+  "vnfmInfo": ["SDK"],
+  "vdu": [
+    {
+      "vduId": "ru_vdu",
+      "name": "ru_vdu",
+      "description": "VDU of the BBU",
+      "intCpd": [
+        {
+          "cpdId": "ru_ran_data_int",
+          "layerProtocol": "IPV4",
+          "description": "RU Internal CP to Digital Twin ran vl data",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }
+      ],
+      "virtualComputeDesc": "ru_vcd",
+      "virtualStorageDesc": ["ru_vsd"],
+      "swImageDesc": {
+        "id": "ru_swid",
+        "name": "cirros",
+        "version": "0.1",
+        "checksum": "TBD",
+        "containerFormat": "QCOW",
+        "diskFormat": "QCOW",
+        "minDisk": 1,
+        "minRam": 1,
+        "size": 10,
+        "swImage": "cirros",
+        "userImage": "usercirros",
+        "operatingSystem": "ubuntu-server"
+      },
+      "configurableProperties": {}
+  }],
+  "virtualComputeDesc": [{
+    "virtualComputeDescId": "ru_vcd",
+    "virtualMemory": {
+      "virtualMemSize": 1,
+      "virtualMemOversubscriptionPolicy": "nn",
+      "numaEnabled": false
+    },
+    "virtualCpu": {
+      "numVirtualCpu": 1,
+      "cpuArchitecture": "x86_64",
+      "virtualCpuClock": 0,
+      "virtualCpuOversubscriptionPolicy": "nn"
+    }
+
+  }],
+  "virtualStorageDesc": [{
+    "id": "ru_vsd",
+    "typeOfStorage": "VOLUME",
+    "sizeOfStorage": 10,
+    "swImageDesc": "cirros"
+  }],
+  "vnfExtCpd": [{
+    "cpdId": "ru_ran_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "RU External CP to Digital Twin ran vl data",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": true,
+      "floatingIpActivated": false,
+      "IPAddressType": "IPv4",
+      "numberOfIpAddress": 1
+	  "fixedIpAddress" : "10.0.1.10" /*value to be check*/
+    }],
+    "intCpd": "ru_ran_data_int"
+   }
+  ],
+  "deploymentFlavour": [{
+    "flavourId": "ru_df",
+    "description": "Standard deployment flavour of the RU VNF",
+    "vduProfile": [{
+      "vduId": "ru_vdu",
+      "minNumberOfInstances": 1,
+      "maxNumberOfInstances": 1
+    }],
+    "instantiationLevel": [{
+      "levelId": "ru_il",
+      "description": "Standard instantiation level of the RU VNF",
+      "vduLevel": [{
+        "vduId": "ru_vdu",
+        "numberOfInstances": 1
+      }]
+    }],
+    "vnfLcmOperationsConfiguration": {}
+  }],
+  "configurableProperties": {
+    "autoScalable": false,
+    "autoHealable": false,
+    "additionalConfigurableProperty": [
+
+    ]
+  },
+  "modifiableAttributes": {},
+  "lifeCycleManagementScript": [{
+    "event": ["START_VNF_INSTANTIATION"],
+    "script": ""
+
+  }, {
+    "event": ["END_VNF_INSTANTIATION"],
+    "script": ""
+  }, {
+    "event": ["START_VNF_TERMINATION"],
+    "script": ""
+  }, {
+    "event": ["END_VNF_TERMINATION"],
+    "script": ""
+  }]
+}
+
+

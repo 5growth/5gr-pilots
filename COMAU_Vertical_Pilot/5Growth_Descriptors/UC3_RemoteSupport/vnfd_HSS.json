@@ -1,0 +1,124 @@
+{
+  "vnfdId": "pHSS",
+  "vnfProductName": "pHSS",
+  "vnfSoftwareVersion": "0.1",
+  "vnfdVersion": "0.1",
+  "vnfProductInfoName": "pHSS",
+  "vnfProductInfoDescription": "HSS for COMAU Pilot",
+  "vnfmInfo": ["SDK"],
+  "vdu": [
+    {
+      "vduId": "hss_vdu",
+      "name": "hss_vdu",
+      "description": "VDU of the BBU",
+      "intCpd": [
+        {
+          "cpdId": "hss_subscriber_data_int",
+          "layerProtocol": "IPV4",
+          "description": "HSS Internal CP to subscriber vl data",
+          "addressData": [
+            {
+              "addressType": "IP_ADDRESS",
+              "iPAddressAssignment": false,
+              "floatingIpActivated": true,
+              "iPAddressType": "IPv4",
+              "numberOfIpAddress": 1,
+              "management": true
+            }]
+        }
+      ],
+      "virtualComputeDesc": "hss_vcd",
+      "virtualStorageDesc": ["hss_vsd"],
+      "swImageDesc": {
+        "id": "hss_swid",
+        "name": "cirros",
+        "version": "0.1",
+        "checksum": "TBD",
+        "containerFormat": "QCOW",
+        "diskFormat": "QCOW",
+        "minDisk": 1,
+        "minRam": 1,
+        "size": 10,
+        "swImage": "cirros",
+        "userImage": "usercirros",
+        "operatingSystem": "ubuntu-server"
+      },
+      "configurableProperties": {}
+  }],
+  "virtualComputeDesc": [{
+    "virtualComputeDescId": "hss_vcd",
+    "virtualMemory": {
+      "virtualMemSize": 1,
+      "virtualMemOversubscriptionPolicy": "nn",
+      "numaEnabled": false
+    },
+    "virtualCpu": {
+      "numVirtualCpu": 1,
+      "cpuArchitecture": "x86_64",
+      "virtualCpuClock": 0,
+      "virtualCpuOversubscriptionPolicy": "nn"
+    }
+
+  }],
+  "virtualStorageDesc": [{
+    "id": "hss_vsd",
+    "typeOfStorage": "VOLUME",
+    "sizeOfStorage": 10,
+    "swImageDesc": "cirros"
+  }],
+  "vnfExtCpd": [{
+    "cpdId": "hss_subscriber_data_ext",
+    "layerProtocol": "IPV4",
+    "description": "HSS External CP to subscriber vl data",
+    "addressData": [{
+      "addressType": "IP_ADDRESS",
+      "iPAddressAssignment": true,
+      "floatingIpActivated": false,
+      "IPAddressType": "IPv4",
+      "numberOfIpAddress": 1
+	  "fixedIpAddress" : "10.0.10.40" /*value to be check*/
+    }],
+    "intCpd": "hss_subscriber_data_int"
+   }
+  ],
+  "deploymentFlavour": [{
+    "flavourId": "hss_df",
+    "description": "Standard deployment flavour of the HSS VNF",
+    "vduProfile": [{
+      "vduId": "hss_vdu",
+      "minNumberOfInstances": 1,
+      "maxNumberOfInstances": 1
+    }],
+    "instantiationLevel": [{
+      "levelId": "hss_il",
+      "description": "Standard instantiation level of the HSS VNF",
+      "vduLevel": [{
+        "vduId": "hss_vdu",
+        "numberOfInstances": 1
+      }]
+    }],
+    "vnfLcmOperationsConfiguration": {}
+  }],
+  "configurableProperties": {
+    "autoScalable": false,
+    "autoHealable": false,
+    "additionalConfigurableProperty": [
+
+    ]
+  },
+  "modifiableAttributes": {},
+  "lifeCycleManagementScript": [{
+    "event": ["START_VNF_INSTANTIATION"],
+    "script": ""
+
+  }, {
+    "event": ["END_VNF_INSTANTIATION"],
+    "script": ""
+  }, {
+    "event": ["START_VNF_TERMINATION"],
+    "script": ""
+  }, {
+    "event": ["END_VNF_TERMINATION"],
+    "script": ""
+  }]
+}

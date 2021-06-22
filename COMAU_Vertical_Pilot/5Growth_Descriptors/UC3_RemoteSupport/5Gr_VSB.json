@@ -1,0 +1,69 @@
+{
+        "interSite": true,
+        "version": "1.0",
+        "name": "comau_dt_e2e",
+        "description": "COMAU Digital Twin service",
+        "parameters": [
+            {
+                "parameterId": "5GEVE_COMAU_DT_VSS.number_of_robots",
+                "parameterName": "Number or robots",
+                "parameterType": "number",
+                "parameterDescription": "description",
+                "applicabilityField": "industry"
+            }
+        ],
+        "configurableParameters": [
+            "5GEVE_COMAU_DT_VSS.exp.targetSites",
+            "5GEVE_COMAU_DT_VSS.exp.stopTime",
+            "5GEVE_COMAU_DT_VSS.exp.useCase",
+            "5GEVE_COMAU_DT_VSS.tc.tcBlueprintIds",
+            "5GEVE_COMAU_DT_VSS.tc.544.params.sleep_time"
+          
+        ],
+        "atomicComponents": [
+            {
+                "type": "SERVICE",
+                "componentId": "5GEVE_COMAU_DT_VSS",
+                "compatibleSite": "5GEVE",
+                "associatedVsbId": "5GEVE_COMAU_DT_ID",
+                "endPointsIds": [
+                    "app_server_data",
+					"app_server_mgmt"
+           
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "app_server_data",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            },
+			{
+                "endPointId": "app_server_mgmt",
+                "external": false,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "mgmt",
+                "management": true,
+                "endPointIds": [
+                    "app_server_mgmt"
+                    
+                ],
+                "external": false
+            },
+            {
+                "name": "data",
+                "endPointIds": [
+                    "app_server_data"
+                ],
+                "management": false,
+                "external": true
+            }
+        ]
+    }

@@ -1,0 +1,16 @@
+{
+        "ctxBlueprintIds": [],
+        "description": "5GROWTH_COMAU_DT",
+        "name": "5GROWTH_COMAU_DT",
+        "sites": [
+            "TURIN_5GROWTH_COMAU"
+        ],
+        "tcBlueprintIds": [
+            "544"
+        ],
+        "deploymentType": "ON_DEMAND",
+        "version": "1.0",
+        "vsBlueprintId": "5GROWTH_COMAU_DT",
+        "metrics": [],
+        "kpis": []
+    }

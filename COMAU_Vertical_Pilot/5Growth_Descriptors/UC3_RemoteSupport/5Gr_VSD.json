@@ -1,0 +1,12 @@
+{
+        "name": "comau_dt_vsd",
+        "version": "1.0",
+        "vsBlueprintId": "5GR_COMAU_VSB_ID",
+        "managementType": "PROVIDER_MANAGED",
+        "qosParameters": {
+            "5GEVE_COMAU_DT_VSS.number_of_robots":"100"
+            
+        },
+        "serviceConstraints": [],
+        "sla": {}
+    }

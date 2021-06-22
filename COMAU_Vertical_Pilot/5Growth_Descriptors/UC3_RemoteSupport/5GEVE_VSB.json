@@ -1,0 +1,65 @@
+{
+        "blueprintId": "5GROWTH_COMAU_DT",
+        "version": "1.0",
+        "name": "COMAU_DIGITAL_TWIN_VSB",
+        "description": "COMAU Digital Twin service",
+        "parameters": [
+            {
+                "parameterId": "number_of_robots",
+                "parameterName": "Number of robots",
+                "parameterType": "number",
+                "parameterDescription": "Number of robots",
+                "applicabilityField": "industry"
+            }
+        ],
+        "atomicComponents": [
+            {
+                "componentId": "DT_APP_SERVER",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "endPointsIds": [
+                    "app_server_data",
+					"app_server_mgmt"
+           
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "app_server_data",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            },
+			{
+                "endPointId": "app_server_mgmt",
+                "external": false,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "mgmt",
+                "management": true,
+                "endPointIds": [
+                    "app_server_mgmt"
+                    
+                ],
+                "external": false
+            },
+            {
+                "name": "data",
+                "endPointIds": [
+                    "app_server_data"
+                ],
+                "management": false,
+                "external": true
+            }
+        ],
+        "applicationMetrics": [],
+        "compatibleContextBlueprint": [],
+        "compatibleSites": [
+            "TURIN_5GROWTH_COMAU"
+        ]
+    }

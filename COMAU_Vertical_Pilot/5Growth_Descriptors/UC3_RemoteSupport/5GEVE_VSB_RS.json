@@ -1,0 +1,65 @@
+{
+        "blueprintId": "5GROWTH_COMAU_RS",
+        "version": "1.0",
+        "name": "COMAU_REMOTE_SUPPORT_VSB",
+        "description": "COMAU REMOTE SUPPORT service",
+        "parameters": [
+            {
+                "parameterId": "number_of_operators",
+                "parameterName": "Number of operators",
+                "parameterType": "number",
+                "parameterDescription": "Number of operators",
+                "applicabilityField": "industry"
+            }
+        ],
+        "atomicComponents": [
+            {
+                "componentId": "RS_APP_SERVER",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "endPointsIds": [
+                    "rs_server_data",
+					"rs_server_mgmt"
+           
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "rs_server_data",
+                "external": false,
+                "management": false,
+                "ranConnection": true
+            },
+			{
+                "endPointId": "rs_server_mgmt",
+                "external": false,
+                "management": true,
+                "ranConnection": false
+            }
+        ],
+        "connectivityServices": [
+            {
+                "name": "mgmt",
+                "management": true,
+                "endPointIds": [
+                    "rs_server_mgmt"
+                    
+                ],
+                "external": false
+            },
+            {
+                "name": "data",
+                "endPointIds": [
+                    "rs_server_data"
+                ],
+                "management": false,
+                "external": true
+            }
+        ],
+        "applicationMetrics": [],
+        "compatibleContextBlueprint": [],
+        "compatibleSites": [
+            "ITALY_TURIN"
+        ]
+    }

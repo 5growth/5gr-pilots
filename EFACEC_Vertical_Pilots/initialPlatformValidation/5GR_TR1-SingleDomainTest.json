@@ -1,0 +1,10 @@
+{
+    "nstId": "e2e_nst",
+    "input": [
+        {
+            "parameterId": "users",
+            "minValue": 0,
+            "maxValue": 2500
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "vsblueprintId":"multiDomainTest-VSB",
+    "version": "1.1",
+    "name": "multiDomainTest-VSB",
+    "description": "multiDomainTest-VSB",
+    "parameters": [
+        {
+            "parameterId": "users",
+            "parameterName": "users",
+            "parameterType": "number",
+            "parameterDescription": "number of users",
+            "applicabilityField": "other"
+        }
+    ],
+    "atomicComponents":[],
+    "endPoints":[],
+    "connectivityServices":[],
+    "configurableParameters":[
+        "nsstId.20fd69b4-bbb3-44d5-87e5-5111b2609712.domain",
+        "nsstId.0a56925a-3db4-4e76-b5b9-bf6a8fb6d8d1.domain"
+    ],
+    "applicationMetrics":[]
+}

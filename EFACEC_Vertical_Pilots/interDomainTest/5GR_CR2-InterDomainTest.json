@@ -1,0 +1,9 @@
+{
+    "type":"REST",
+    "name":"getvnfinfo",
+    "nsdId":"interdomainNsdId",
+    "expectedStatusCode":"OK",
+    "httpMethod":"POST",
+    "config":"day1-operation",
+    "url":"subnetDomain"
+}

@@ -1,0 +1,11 @@
+{
+    "nstId": "e2e_nst",
+    "nstName": "e2e_nst",
+    "nstVersion": "0.2",
+    "nstProvider": "ALB",
+    "nsdId": "e2e_nsd",
+    "nsdVersion": "0.1",
+    "nsstIds": [
+        "daccce5f-1bec-4984-9815-7a9f58b9ffad"
+    ]
+}

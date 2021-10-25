@@ -1,20 +1,20 @@
 {
-	"vnfdId": "792d0eca-d17c-4d4f-9503-00714f321caf",
+	"vnfdId": "9784c8b1-d5ec-44f9-a98d-662f7bca95cf",
 	"vnfProvider": "Innovalia",
-	"vnfProductName": "AGVVNF",
+	"vnfProductName": "DARLVNF",
 	"vnfSoftwareVersion": "0.1",
 	"vnfdVersion": "0.1",
-	"vnfProductInfoName": "AGVVNF",
-	"vnfProductInfoDescription": "AGVVNF",
+	"vnfProductInfoName": "DARLVNF",
+	"vnfProductInfoDescription": "DARLVNF",
 	"vnfmInfo": ["INNO_VNFM"],
 	"vdu": [{
-		"vduId": "AGVVNF_vdu",
-		"name": "AGVVNF",
-		"description": "VDU of the AGVVNF",
+		"vduId": "DARLVNF_vdu",
+		"name": "DARLVNF",
+		"description": "VDU of the DARLVNF",
 		"intCpd": [ {
-			"cpdId": "AGV_n6_intcp",
+			"cpdId": "DARL_n6_intcp",
 			"layerProtocol": "IPV4",
-			"description": "CP for the AGVVNF to connect with UPF",
+			"description": "CP for the DARLVNF to connect with UPF",
 			"addressData": [{
 				"addressType": "IP_ADDRESS",
 				"iPAddressAssignment": false,
@@ -24,11 +24,11 @@
 				"numberOfIpAddress": 1
 			}]
 		}],
-		"virtualComputeDesc": "VCD_AGV",
-		"virtualStorageDesc": ["VSD_AGV"],
+		"virtualComputeDesc": "VCD_DARL",
+		"virtualStorageDesc": ["VSD_DARL"],
 		"swImageDesc": {
-			"id": "AGV_SWID",
-			"name": "AGVVNF",
+			"id": "DARL_SWID",
+			"name": "DARLVNF",
 			"user_image": "ubuntu",
 			"version": "0.1",
 			"checksum": "TBD",
@@ -37,13 +37,13 @@
 			"minDisk": 1,
 			"minRam": 16,
 			"size": 100,
-			"swImage": "AGVVNF",
+			"swImage": "inno_01",
 			"operatingSystem": "Ubuntu-18.04"
 		},
 		"configurableProperties": {}
 	}],
 	"virtualComputeDesc": [{
-		"virtualComputeDescId": "VCD_AGV",
+		"virtualComputeDescId": "VCD_DARL",
 		"virtualMemory": {
 			"virtualMemSize": 16,
 			"virtualMemOversubscriptionPolicy": "asdasd",
@@ -58,15 +58,15 @@
 		
 	}],
 	"virtualStorageDesc": [{
-		"id": "AGV_DARL",
+		"id": "VSD_DARL",
 		"typeOfStorage": "VOLUME",
 		"sizeOfStorage": 100,
-		"swImageDesc": "CDN_AGV_SWID"
+		"swImageDesc": "CDN_spr2_SWID"
 	}],
 	"vnfExtCpd": [{
-		"cpdId": "AGV_n6_extcp",
+		"cpdId": "DARL_n6_extcp",
 		"layerProtocol": "IPV4",
-		"description": "CP for the AGVVNF to connect to UPF",
+		"description": "CP for the DARLVNF to connect with Robot Link (and UPF)",
 		"addressData": [{
 			"addressType": "IP_ADDRESS",
 			"iPAddressAssignment": false,
@@ -75,21 +75,21 @@
 			"iPAddressType": "IPv4",
 			"numberOfIpAddress": 1
 		}],
-		"intCpd": "AGV_n6_intcp"
+		"intCpd": "DARL_n6_intcp"
 	}],
 	"deploymentFlavour": [{
-		"flavourId": "AGVVNF_df",
-		"description": "Standard deployment flavour of the AGV VNF",
+		"flavourId": "DARLVNF_df",
+		"description": "Standard deployment flavour of the DataAssembler VNF",
 		"vduProfile": [{
-			"vduId": "AGVVNF_vdu",
+			"vduId": "DARLVNF_vdu",
 			"minNumberOfInstances": 1,
 			"maxNumberOfInstances": 1
 		}],
 		"instantiationLevel": [{
-			"levelId": "AGVVNF_il",
-			"description": "Standard instantiation level of the AGV VNF",
+			"levelId": "DARLVNF_il",
+			"description": "Standard instantiation level of the DataAssembler VNF",
 			"vduLevel": [{
-				"vduId": "AGVVNF_vdu",
+				"vduId": "DARLVNF_vdu",
 				"numberOfInstances": 1
 			}]
 		}],

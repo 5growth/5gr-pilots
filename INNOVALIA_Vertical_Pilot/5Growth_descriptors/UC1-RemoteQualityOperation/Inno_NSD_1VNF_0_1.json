@@ -1,6 +1,6 @@
 {
 	"nsd": {
-		"nsdIdentifier": "86064fb8-f09f-4e4a-a47f-3a50a9f224af",
+		"nsdIdentifier": "INNO-CMM-NS-DARL",
 		"designer": "Innovalia-CTTC",
 		"version": "0.1",
 		"nsdName": "INNO_CMM_DARL",
@@ -92,7 +92,7 @@
 			"defaultNsInstantiationLevelId": "Inno-CMM_il_default",
 			"nsProfile": [{
 				"nsProfileId": "ns_profile_Inno-CMM_default",
-				"nsdId": "86064fb8-f09f-4e4a-a47f-3a50a9f224af",
+				"nsdId": "INNO-CMM-NS-DARL",
 				"nsDfId": "df_Inno_CMM",
 				"nsInstantiationLevelId": "Inno-CMM_il_default",
 				"minNumberOfInstances": 1,

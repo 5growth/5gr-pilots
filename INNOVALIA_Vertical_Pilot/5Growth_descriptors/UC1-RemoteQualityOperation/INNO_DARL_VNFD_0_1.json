@@ -37,7 +37,7 @@
 			"minDisk": 1,
 			"minRam": 16,
 			"size": 100,
-			"swImage": "DARLVNF",
+			"swImage": "inno_01",
 			"operatingSystem": "Ubuntu-18.04"
 		},
 		"configurableProperties": {}

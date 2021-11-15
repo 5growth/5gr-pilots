@@ -1,0 +1,20 @@
+{
+    "version": "1.1",
+    "name": "interdomainMtdTest",
+    "description": "interdomainMtdTest",
+    "parameters": [
+    {
+        "parameterId": "users",
+        "parameterName": "users",
+        "parameterType": "number",
+        "parameterDescription": "number of users",
+        "applicabilityField": "other"
+    }
+    ],
+    "configurableParameters":[
+        "nsstId.c5ec262f-0941-4e6e-b6d9-7de623df71e2.domain",
+        "nsstId.5f91220f-972b-4ad5-abf2-151b66526dc5.domain",
+        "nsstId.c5ec262f-0941-4e6e-b6d9-7de623df71e2.config",
+        "nsstId.5f91220f-972b-4ad5-abf2-151b66526dc5.config"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "type":"REST",
+    "name":"getvnfinfo",
+    "day1":true,
+    "nstId":"interdomain_nst",
+    "expectedStatusCode":"OK",
+    "httpMethod":"POST",
+    "config":"getvnfinfo"
+}

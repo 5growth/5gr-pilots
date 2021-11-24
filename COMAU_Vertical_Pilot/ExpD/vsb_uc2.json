@@ -1,0 +1,41 @@
+{ 
+        "blueprintId" : "comau_uc2",
+        "version": "1.0",
+        "name": "telemetry_and_monitoring",
+        "description": "Telemetry and monitoring",
+        "sliceServiceType": "MMTC",
+        "atomicComponents": [
+            {
+                "componentId": "vTelemetryAndMonitoring",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "placement": "EDGE",
+                "endPointsIds": [
+                    "sap_tm_data"
+                ]
+            },
+            {
+                "componentId": "Ingrid",
+                "serversNumber": 1,
+                "endPointsIds": [
+                    "sap_tm_data"
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "sap_tm_data",
+                "external": true,
+                "management": false,
+                "ranConnection": true
+            }
+        ],
+        "connectivityServices": [
+            {
+                "endPointIds": [
+                    "sap_tm_data"
+                ],
+                "external": true
+            }
+        ]
+    }

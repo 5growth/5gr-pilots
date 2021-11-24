@@ -1,0 +1,61 @@
+{
+  "vsBlueprintId": "comau_uc1",
+  "expBlueprintId": "comau_uc1_exp",
+  "testExecution": "Service instantiated, metric gathered from 5Growth latency probe",
+  "kpis": [
+    {
+      "kpiId": "CKPI-6",
+      "kpiFormula": "MEAN(VS_INSTANTIATION_TIME)",
+      "name": "Slice Creation Time",
+      "metricIds": [
+        "VS_INSTANTIATION_TIME"
+      ],
+      "interval": "10 times",
+      "unit": "seconds"
+    },{
+      "kpiId": "CKPI-1",
+      "kpiFormula": "MEAN(LATENCY_USERPLANE)",
+      "name": "End-to-end Latency",
+      "metricIds": [
+        "LATENCY_USERPLANE_RTT"
+      ],
+      "interval": "10 times",
+      "unit": "seconds"
+    }
+  ],
+  "infrastructureMetrics": [
+   {
+      "metricId": "UPLINK_LATENCY_USERPLANE",
+      "name": "userplace latency",
+      "unit": "s",
+      "interval": "10s",
+      "metricGraphType": "LINE"
+    },
+    {
+      "metricId": "DOWNLINK_LATENCY_USERPLANE",
+      "name": "userplace latency",
+      "unit": "s",
+      "interval": "10s",
+      "metricGraphType": "LINE"
+    },
+    {
+      "metricId": "LATENCY_USERPLANE_RTT",
+      "name": "userplane latency round-triptime",
+      "unit": "s",
+      "interval": "10s",
+      "metricGraphType": "LINE"
+    }
+  ],
+  "growthPlatformMetrics": [
+    {
+      "metricId": "VS_INSTANTIATION_TIME",
+      "name": "5Gr-VS instantiation time",
+      "unit": "seconds",
+      "growthPlatformElement": "5GR-VS"
+    }
+  ],
+  "sites": [
+    "SPAIN_5GROWTH_COMAU"
+    
+  ]
+}

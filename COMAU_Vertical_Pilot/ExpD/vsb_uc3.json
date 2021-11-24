@@ -1,0 +1,34 @@
+{
+	"blueprintId": "comau_uc3",
+        "version": "1.0",
+        "name": "RemoteSupport",
+        "description": "Remote Support VS",
+        "sliceServiceType": "EMBB",
+        "atomicComponents": [
+            {
+                "componentId": "DigitalLibrary",
+                "serversNumber": 1,
+                "type": "FUNCTION",
+                "placement": "CORE",
+                "endPointsIds": [
+                    "sap_dl_data"
+                ]
+            }
+        ],
+        "endPoints": [
+            {
+                "endPointId": "sap_dl_data",
+                "external": true,
+                "management": false,
+                "ranConnection": true
+            }
+        ],
+        "connectivityServices": [
+            {
+                "endPointIds": [
+                    "sap_dl_data"
+                ],
+                "external": true
+            }
+        ]
+    },

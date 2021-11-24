@@ -1,0 +1,53 @@
+{
+  "vsBlueprintId": "comau_uc3",
+  "expBlueprintId": "comau_uc3_exp",
+  "testExecution": "",
+  "kpis": [
+    {
+      "kpiId": "CKPI-6",
+      "kpiFormula": "MEAN(VS_INSTANTIATION_TIME)",
+      "name": "Slice Creation Time",
+      "metricIds": [
+        "VS_INSTANTIATION_TIME"
+      ],
+      "interval": "10 times",
+      "unit": "seconds"
+    },{
+      "kpiId": "CKPI-3",
+      "kpiFormula": "MEAN(USER_DATA_RATE_UPLINK)",
+      "name": "End-to-end Latency",
+      "metricIds": [
+        "USER_DATA_RATE_UPLINK"
+      ],
+      "interval": "10 times",
+      "unit": "seconds"
+    }
+  ],
+  "infrastructureMetrics": [
+   {
+      "metricId": "LATENCY_USERPLANE",
+      "name": "userplace latency",
+      "unit": "s",
+      "interval": "10s",
+      "metricGraphType": "LINE"
+    },
+    {
+      "metricId": "LATENCY_USERPLANE_RTT",
+      "name": "userplane latency round-triptime",
+      "unit": "s",
+      "interval": "10s",
+      "metricGraphType": "LINE"
+    }
+  ],
+  "growthPlatformMetrics": [
+    {
+      "metricId": "VS_INSTANTIATION_TIME",
+      "name": "5Gr-VS instantiation time",
+      "unit": "seconds",
+      "growthPlatformElement": "5GR-VS"
+    }
+  ],
+  "sites": [
+    "ITALY_5GROWTH_COMAU", "ITALY_POLITO"
+  ]
+}

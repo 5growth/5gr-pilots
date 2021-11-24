@@ -1,0 +1,146 @@
+{
+  "blueprintId": "comau_uc1",
+  "name": "Digital Twin Apps",
+  "description": "Service providing Digital Twin virtual representation for real-time reporting and remote control of a robot",
+  "parameters": [
+    {
+      "parameterId": "number_of_robots",
+      "parameterName": "Number of robots",
+      "parameterType": "number",
+      "parameterDescription": "Number of robots to be represented via the Digital Twin",
+      "applicabilityField": "industry"
+    }
+  ],
+  "atomicComponents": [
+    {
+      "componentId": "DTApp",
+      "description": "Digitial Twin Application functional block",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "DTApp_data"
+      ]
+      
+    },{
+      "componentId": "vEPC",
+      "description": "virtual EPC",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "epc_core_data_ext",
+        "epc_subscriber_data_ext",
+        "epc_app_data_ext"
+      ]
+    },{
+      "componentId": "vBBU",
+      "description": "vBBU",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "bbu_ran_data_ext",
+        "bbu_core_data_ext"
+      ]
+    },{
+      "componentId": "HSS",
+      "description": "HSS",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "hss_subscriber_data_ext"
+      ]
+    },{
+      "componentId": "RU",
+      "description": "RU",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "ru_ran_data_ext"
+      ]
+    }
+    
+  ],
+  "endPoints": [
+    {
+      "endPointId": "DTApp_data",
+      "external": false,
+      "management": false,
+      "ranConnection": true
+    },
+    {
+      "endPointId": "epc_core_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "epc_subscriber_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "epc_app_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "bbu_ran_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "bbu_core_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "hss_subscriber_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "ru_ran_data_ext",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    }
+  ],
+  "connectivityServices": [
+    {
+      "name": "dt_ran_vl_data",
+      "management": false,
+      "endPointIds": [
+        "bbu_ran_data_ext",
+        "ru_ran_data_ext"
+      ],
+      "external": false
+    },
+    {
+      "name": "dt_core_vl_data",
+      "endPointIds": [
+        "bbu_core_data_ext",
+        "epc_core_data_ext"
+      ],
+      "management": false,
+      "external": false
+    },
+    {
+      "name": "dt_subscriber_vl_data",
+      "endPointIds": [
+        "epc_subscriber_data_ext",
+        "hss_subscriber_data_ext"
+      ],
+      "management": false,
+      "external": false
+    },
+    {
+      "name": "dt_app_vl_data",
+      "endPointIds": [
+        "DTApp_data",
+        "epc_app_data_ext"
+      ],
+      "management": false,
+      "external": false
+    }
+  ],
+  "applicationMetrics": []
+}

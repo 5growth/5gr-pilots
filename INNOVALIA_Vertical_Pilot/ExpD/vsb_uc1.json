@@ -1,0 +1,58 @@
+{
+  "blueprintId": "innovalia_uc1",
+  "name": "Connected Worker Remote Operation of Quality Equipment",
+  "description": "Service providing the network slices and the software required to enable the remote calibration of a Coordinate Measuring Machine",
+  "parameters": [
+    {
+      "parameterId": "cmm_location",
+      "parameterName": "CMM location",
+      "parameterType": "geographical area id",
+      "parameterDescription": "The geographical location of the CMM",
+      "applicabilityField": "industry"
+    }
+  ],
+  "atomicComponents": [
+    {
+      "componentId": "DARL",
+      "description": "Data Assembler and Robot Link functional block",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "DARL_controller_extcp",
+        "DARL_n6_extcp"
+      ]
+    }
+  ],
+  "endPoints": [
+    {
+      "endPointId": "DARL_controller_extcp",
+      "external": false,
+      "management": false,
+      "ranConnection": false
+    },
+    {
+      "endPointId": "DARL_n6_extcp",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    }
+  ],
+  "connectivityServices": [
+    {
+      "name": "n6_cmm_vl",
+      "management": false,
+      "endPointIds": [
+        "DARL_n6_extcp"
+      ],
+      "external": false
+    },
+    {
+      "name": "controller_cmm_vl",
+      "endPointIds": [
+        "DARL_controller_extcp"
+      ],
+      "management": false,
+      "external": false
+    }
+  ],
+  "applicationMetrics": []
+}

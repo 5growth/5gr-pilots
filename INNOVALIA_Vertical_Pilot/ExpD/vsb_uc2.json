@@ -1,0 +1,79 @@
+{
+  "blueprintId": "innovalia_uc2",
+  "name": "Augmented Zero Defect Manufacturing Decision Support System",
+  "description": "Service providing semi-automatized measurement\nprocess, enabling the communication between the AGV controller and the CMM",
+  "parameters": [
+    {
+      "parameterId": "number_of_robots",
+      "parameterName": "Number of robots",
+      "parameterType": "number",
+      "parameterDescription": "Number of robots",
+      "applicabilityField": "industry"
+    }
+  ],
+  "atomicComponents": [
+    {
+      "componentId": "DARL",
+      "type": "FUNCTION",
+      "endPointsIds": [
+        "DARL_controller_extcp",
+        "DARL_n6_extcp"
+      ]
+    },
+    {
+      "componentId": "AGV",
+      "serversNumber": 1,
+      "endPointsIds": [
+        "AGV_controller_extcp",
+        "AGV_n6_extcp"
+      ]
+    }
+  ],
+  "endPoints": [
+    {
+      "endPointId": "DARL_controller_extcp",
+      "external": false,
+      "management": false,
+      "ranConnection": false
+    },
+    {
+      "endPointId": "DARL_n6_extcp",
+      "external": false,
+      "management": false, 
+      "ranConnection": false
+    },
+    {
+      "endPointId": "AGV_controller_extcp",
+      "external": false,
+      "management": false,
+      "ranConnection": false
+    },
+    {
+      "endPointId": "AGV_n6_extcp",
+      "external": false,
+      "management": true,
+      "ranConnection": false
+    }
+  ],
+  "connectivityServices": [
+    {
+      "name": "n6_cmm_vl",
+      "management": false,
+      "endPointIds": [
+        "DARL_n6_extcp",
+        "AGV_n6_extcp"
+      ],
+      "external": false
+    },
+    {
+      "name": "controller_cmm_vl",
+      "endPointIds": [
+        "DARL_controller_extcp",
+        "AGV_controller_extcp"
+      ],
+      "management": false,
+      "external": false
+    }
+  ],
+  "applicationMetrics": []
+}

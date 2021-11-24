@@ -1,0 +1,10 @@
+{
+    "nstId": "interdomain_nst",
+    "nstName": "Interdomain NST",
+    "nstVersion": "0.2",
+    "nstProvider": "ITAV",
+    "nsstIds": [
+        "f9d8ea11-bdc3-4791-9912-f9b6f91f3e94",
+        "5f91220f-972b-4ad5-abf2-151b66526dc5"
+    ]
+}

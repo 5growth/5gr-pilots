@@ -1,0 +1,9 @@
+{
+    "type":"REST",
+    "name":"activatemtd",
+    "day1":true,
+    "nstId":"interdomain_nst",
+    "expectedStatusCode":"OK",
+    "httpMethod":"POST",
+    "config":"activatemtd"
+}

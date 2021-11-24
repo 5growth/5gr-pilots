@@ -1,0 +1,10 @@
+{
+    "nstId": "interdomain_nst",
+    "input": [
+      {
+        "parameterId": "users",
+        "minValue": 0,
+        "maxValue": 2500
+      }
+    ]
+  }

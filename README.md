@@ -3,25 +3,26 @@ Repo to upload the descriptors of the different use cases/pilots
 
 
 # Experiment Catalogue
+
 To support reproducibility/comparison efforts, we provide hereunder a Service KPI index of the experiments conducted in Work Package 4, aiming to capture the different ways a given SKPI has been measured. For each SKPI, we list all pilot use-cases evaluating them, the corresponding Core KPIs, and summarize key informations on the used tools. Note that the detailed measurement procedures for each pilot/use-case are available in deliverable [D4.2](https://5growth.eu/wp-content/uploads/2019/06/D4.2-Verification_methodology_and_tool_design.pdf), with minor updates in [D4.3](https://5growth.eu/wp-content/uploads/2019/06/D4.3-5G_facility_validation_and_verification_report.pdf) and [D4.4](https://5growth.eu/deliverables/).
 
-<div class="toc">
-    <div class="toc-header">Index</div>
-    <ol>
-        <li><a href="#skpi1">Service Setup Time (5GR-SKPI-1)</a></li>
-        <li><a href="#skpi2">Synchronization between communication components (5GR-SKPI-2)</a></li>
-        <li><a href="#skpi3">Device Mobility (5GR-SKPI-3)</a></li>
-        <li><a href="#skpi4">High-resolution Real-time Video Quality  (5GR-SKPI-4)</a></li>
-        <li><a href="#skpi5">Radius of Operation (5GR-SKPI-5)</a></li>
-        <li><a href="#skpi6">Integrated Multitype Communications (5GR-SKPI-6)</a></li>
-        <li><a href="#skpi7">Extensive Network Coverage in Vertical Premises (5GR-SKPI-7)</a></li>
-        <li><a href="#skpi8">Service Operation Time (5GR-SKPI-8)</a></li>
-        <li><a href="#skpi9">Service Operation Capacity (5GR-SKPI-9)</a></li>
-        <li><a href="#skpi10">Service Availability (5GR-SKPI-10)</a></li>
-        <li><a href="#skpi11">Service Reaction Time (5GR-SKPI-11)</a></li>
-    </ol>
-</div>
-## <a name="skp1"></a>Service Setup Time (5GR-SKPI-1)
+>**Index**
+>
+>  1. [Service Setup Time (5GR-SKPI-1)](#service-setup-time-5gr-skpi-1)
+>  1. [Synchronization between communication components (5GR-SKPI-2)](#synchronization-between-communication-components-5gr-skpi-2)
+>  1. [Device Mobility (5GR-SKPI-3)](#device-mobility-5gr-skpi-3)
+>  1. [High-resolution Real-time Video Quality (5GR-SKPI-4)](#high-resolution-real-time-video-quality--5gr-skpi-4)
+>  1. [Radius of Operation (5GR-SKPI-5)](#radius-of-operation-5gr-skpi-5)
+>  1. [Integrated Multitype Communications (5GR-SKPI-6)](#integrated-multitype-communications-5gr-skpi-6)
+>  1. [Extensive Network Coverage in Vertical Premises (5GR-SKPI-7)](#extensive-network-coverage-in-vertical-premises-5gr-skpi-7)
+>  1. [Service Operation Time (5GR-SKPI-8)](#service-operation-time-5gr-skpi-8)
+>  1. [Service Operation Capacity (5GR-SKPI-9)](#service-operation-capacity-5gr-skpi-9)
+>  1. [Service Availability (5GR-SKPI-10)](#service-availability-5gr-skpi-10)
+>  1. [Service Reaction Time (5GR-SKPI-11)](#service-reaction-time-5gr-skpi-11)
+
+
+## Service Setup Time (5GR-SKPI-1)
+
 <table>
     <thead>
         <tr>
@@ -44,7 +45,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi2"></a>Synchronization between communication components (5GR-SKPI-2)
+
+## Synchronization between communication components (5GR-SKPI-2)
+
 <table>
     <thead>
         <tr>
@@ -106,7 +109,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi3"></a>Device Mobility (5GR-SKPI-3)
+
+## Device Mobility (5GR-SKPI-3)
+
 <table>
     <thead>
         <tr>
@@ -139,7 +144,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi4"></a>High-resolution Real-time Video Quality  (5GR-SKPI-4)
+
+## High-resolution Real-time Video Quality  (5GR-SKPI-4)
+
 <table>
     <thead>
         <tr>
@@ -200,7 +207,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi5"></a>Radius of Operation (5GR-SKPI-5)
+
+## Radius of Operation (5GR-SKPI-5)
+
 <table>
     <thead>
         <tr>
@@ -223,7 +232,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi6"></a>Integrated Multitype Communications (5GR-SKPI-6)
+
+## Integrated Multitype Communications (5GR-SKPI-6)
+
 <table>
     <thead>
         <tr>
@@ -245,7 +256,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi7"></a>Extensive Network Coverage in Vertical Premises (5GR-SKPI-7)
+
+## Extensive Network Coverage in Vertical Premises (5GR-SKPI-7)
+
 <table>
     <thead>
         <tr>
@@ -300,7 +313,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi8"></a>Service Operation Time (5GR-SKPI-8)
+
+## Service Operation Time (5GR-SKPI-8)
+
 <table>
     <thead>
         <tr>
@@ -322,7 +337,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi9"></a>Service Operation Capacity (5GR-SKPI-9)
+
+## Service Operation Capacity (5GR-SKPI-9)
+
 <table>
     <thead>
         <tr>
@@ -345,7 +362,9 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi10"></a>Service Availability (5GR-SKPI-10)
+
+## Service Availability (5GR-SKPI-10)
+
 <table>
     <thead>
         <tr>
@@ -369,14 +388,13 @@ To support reproducibility/comparison efforts, we provide hereunder a Service KP
         </tr>
     </tbody>
 </table>
-## <a name="#skpi11"></a>Service Reaction Time (5GR-SKPI-11)
+
+## Service Reaction Time (5GR-SKPI-11)
+
 Not measured in any pilot UC.
 
-
-
-
-
 -------------------
+
 ### Project information
 5GROWTH is funded by the European Union’s Research and Innovation Programme Horizon 2020 under Grant Agreement no. 856709
 

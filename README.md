@@ -4,28 +4,7 @@ Repo to upload the descriptors of the different use cases/pilots
 
 # Experiment Catalogue
 To support reproducibility/comparison efforts, we provide hereunder a Service KPI index of the experiments conducted in Work Package 4, aiming to capture the different ways a given SKPI has been measured. For each SKPI, we list all pilot use-cases evaluating them, the corresponding Core KPIs, and summarize key informations on the used tools. Note that the detailed measurement procedures for each pilot/use-case are available in deliverable [D4.2](https://5growth.eu/wp-content/uploads/2019/06/D4.2-Verification_methodology_and_tool_design.pdf), with minor updates in [D4.3](https://5growth.eu/wp-content/uploads/2019/06/D4.3-5G_facility_validation_and_verification_report.pdf) and [D4.4](https://5growth.eu/deliverables/).
-<style>
-.toc {
-    background-color: #f8f9fa;
-    border: 1px solid #a2a9b1;
-    display: table;
-    padding: 1em;
-    margin: 1em 0 2em;
-}
-.toc > ol {
-    padding: 0;
-    margin: 0.1em 1em 0;
-}
-.toc > ol > li {
-    display: list-item;
-}
-.toc-header {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1em;
-  font-size: 120%;
-}
-</style>
+
 <div class="toc">
     <div class="toc-header">Index</div>
     <ol>
